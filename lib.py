@@ -93,3 +93,18 @@ def build_sidebar(default_colors, default_label="Default"):
         final_colors = presets.get(colormap, default_colors)
 
     return {"gdp_type": gdp_type, "colormap_name": colormap, "colormap_colors": final_colors, "colormap_scale": scale}
+
+def attribution():
+  return (
+      st.markdown("<div style='height:200px'></div>", unsafe_allow_html=True),
+      st.markdown(
+            f"""
+            **Data source:** World Bank — World Development Indicators (GDP per capita, nominal and PPP).  
+            **Source pages:** World Bank Data (WDI).  
+            **License:** Creative Commons Attribution 4.0 International (CC BY 4.0).  
+            Link: https://data.worldbank.org · License: https://creativecommons.org/licenses/by/4.0/  
+            (This app is independent and is not endorsed by the World Bank.)
+            """,
+            unsafe_allow_html=False
+        )
+  )

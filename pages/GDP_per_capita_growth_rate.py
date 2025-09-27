@@ -5,7 +5,7 @@ import folium
 import branca.colormap as bcm
 from streamlit_folium import st_folium
 import plotly.express as px
-from lib import prepare_gdf, build_sidebar
+from lib import prepare_gdf, build_sidebar, attribution
 
 st.set_page_config(layout="wide")
 st.title("GDP per capita growth rate by country")
@@ -150,3 +150,5 @@ fig.update_yaxes(range=[-max_val, max_val], zeroline=True, zerolinecolor="black"
 fig.update_layout(hovermode="x unified") 
 
 st.plotly_chart(fig, use_container_width=True)
+
+attribution()
